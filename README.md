@@ -1,8 +1,3 @@
-```bash
-This directory contains the production-grade simulation artifacts, root cause analysis, and explicit terminal commands used to resolve a critical **Elastic Kubernetes Service (EKS) Node Scale Failure**.
-
----
-
 ## Incident Scenario & Diagnosis
 
 ### The Symptom
