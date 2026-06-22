@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heavy-scale-app
+  namespace: default
+spec:
+  replicas: 15
+  selector:
+    matchLabels:
+      app: heavy-scale
+  template:
+    metadata:
+      labels:
+        app: heavy-scale
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        resources:
+          requests:
+            cpu: "1000m"  # Demands 1 full CPU core per pod
+            memory: "128Mi"
