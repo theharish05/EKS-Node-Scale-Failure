@@ -1,16 +1,9 @@
-Got it! Let's combine everything beautifully. This single, complete command will write the entire `README.md` file to your folder—including the full explanation, your `scale-test-deployment.yaml` manifest data, the exact patch commands, and the teardown steps.
-
-Run this right inside your terminal:
-
 ```bash
-cat << 'EOF' > README.md
-# Exercise 6 – EKS Cluster Autoscaler Configuration & Max Limits Failure
-
 This directory contains the production-grade simulation artifacts, root cause analysis, and explicit terminal commands used to resolve a critical **Elastic Kubernetes Service (EKS) Node Scale Failure**.
 
 ---
 
-## 🚨 Incident Scenario & Diagnosis
+## Incident Scenario & Diagnosis
 
 ### The Symptom
 During a high-traffic event, the application's **Horizontal Pod Autoscaler (HPA)** scaled the deployment requirements up to a desired count of **15 replicas**. However, the cluster choked:
@@ -24,7 +17,7 @@ During a high-traffic event, the application's **Horizontal Pod Autoscaler (HPA)
 
 ---
 
-## 📦 Simulation Artifacts
+##  Simulation Artifacts
 
 ### Application Test Manifest (`manifests/scale-test-deployment.yaml`)
 This deployment demands 1 full CPU core (`1000m`) per pod, forcing resource congestion to trigger the autoscaler failure:
@@ -131,7 +124,7 @@ ip-192-168-58-86.ec2.internal    Ready    <none>   2m51s   v1.34.9-eks-93b80c6
 
 ---
 
-## 📉 Post-Simulation Clean Up & Cool-Down
+## Post-Simulation Clean Up & Cool-Down
 
 To prevent unexpected infrastructure billing, the simulation application was removed, and the node group parameters were restored to their standard baseline limits:
 
@@ -145,11 +138,5 @@ eksctl scale nodegroup \
     --name=standard-workers \
     --nodes-max=4 \
     --region=us-east-1
-
-```
-
-EOF
-
-```
 
 ```
