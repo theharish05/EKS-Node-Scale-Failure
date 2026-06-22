@@ -97,7 +97,7 @@ eksctl scale nodegroup \
 
 ---
 
-## 🏁 Verification & Infrastructure Verification
+##  Verification & Infrastructure Verification
 
 As soon as the max limits were raised, the Cluster Autoscaler successfully requested capacity from AWS. The worker instance fleet expanded to **10 healthy nodes** to absorb the compute congestion:
 
